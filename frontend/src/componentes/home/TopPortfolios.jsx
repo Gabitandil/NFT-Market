@@ -49,7 +49,7 @@ export default function TopPortfolios({usuario}) {
                                
                                     return (
                                       
-                                        <SwiperSlide key={nft_id}>
+                                        <SwiperSlide key={nft._id}>
 
                                             <ComponentNFT
                                                 
