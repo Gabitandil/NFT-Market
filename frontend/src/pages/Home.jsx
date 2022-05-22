@@ -60,8 +60,7 @@ export default function Home() {
     };
   }, []);
  
- const test = todosLosNFT.map(el => el.ranking)
- console.log(test)
+ 
   useEffect(() => {
     //recibir la respuesta del back
     socket.on("homeUpdate", () => {
