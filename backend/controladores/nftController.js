@@ -351,7 +351,7 @@ const responseOffer = async (req, res) => {
 
     let r = JSON.parse(response);
     
-    if (oferta) {
+    if (oferta && oferta.status !== false) {
       if (r) {
         
         const userToGive = await Usuario.findOne({
@@ -419,6 +419,32 @@ const responseOffer = async (req, res) => {
     res.status(400).send(error);
   }
 };
+
+const cancelOffer = async (req, res) => {
+  const { usuario } = req;
+  const { id } = req.body;
+
+  let offer = usuario.hasTradeOffers.find(element => element.id === id);
+
+  if (offer && offer.userSend) {
+    offer.status = false
+
+    await usuario.save();
+
+    let userR = await Usuario.findOne({ nombre: offer.userReceived });
+
+    let userRoffer = userR.hasTradeOffers.find(element => element.id === id);
+
+    userRoffer.status = false
+
+    await userR.save();
+
+    res.json('Offer canceled');
+  } else {
+    res.json(`You can't cancel this offer`);
+  }
+
+}
 
 const añadirFavNft = async (req, res) => {
   const { id } = req.params;
@@ -621,4 +647,5 @@ export {
   likeNft,
   getPortfolioValue,
   topPortfolios,
+  cancelOffer
 };
