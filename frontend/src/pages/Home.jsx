@@ -26,7 +26,7 @@ export default function Home() {
   const ranking = useSelector((state) => state.ranking);
 
   const [selectedSort, setSelectedSort] = useState("sort");
-
+  const [orderPop, setOrderPop] = useState("");
   //Paginado
   const [currentPage, setCurrentPage] = useState(1);
   const [nftByPage, setNftByPage] = useState(8);
