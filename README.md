@@ -78,7 +78,6 @@ __RECOMENDACION__ Descargar MongoDb
  <ul>
   <li> <a href="https://github.com/pablo-zalazar" >Pablo</a></li>
   <li><a href="https://github.com/alealfaro2020" >Alejandro</a></li>
-  <li> <a href="https://github.com/Gabitandil" >Gabriel</a></li>
   <li><a href="https://github.com/geronimoeth" >Gerónimo</a></li>
   <li> <a href="https://github.com/adelgadilloc" >Abel</a></li>
   <li><a href="https://github.com/cusi7" >Griselda</a></li>
